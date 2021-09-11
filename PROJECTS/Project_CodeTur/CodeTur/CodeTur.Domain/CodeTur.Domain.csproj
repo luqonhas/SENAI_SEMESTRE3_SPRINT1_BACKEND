@@ -5,5 +5,13 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+	
+  <ItemGroup>
+    <PackageReference Include="Flunt" Version="2.0.5" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <ProjectReference Include="..\CodeTur.Shared\CodeTur.Shared.csproj" />
+  </ItemGroup>
 
 </Project>
