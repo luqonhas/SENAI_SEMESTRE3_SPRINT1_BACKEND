@@ -9,7 +9,7 @@ using Xunit;
 namespace CodeTur.Tests
 {
     // teste unitário - instância de uma classe
-    public class UsuarioTestes
+    public class UsuarioTest
     {
         // parâmetro 'Fact' determina que é um teste
         [Fact]

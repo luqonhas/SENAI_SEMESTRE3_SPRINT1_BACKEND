@@ -8,7 +8,7 @@ namespace CodeTur.Shared.Commands
 {
     // CQRS
     // para padronizar todos os resultados dentro da API
-    class GenericCommandResult : ICommandResult
+    public class GenericCommandResult : ICommandResult
     {
         public GenericCommandResult(bool sucesso, string mensagem, object dados)
         {
