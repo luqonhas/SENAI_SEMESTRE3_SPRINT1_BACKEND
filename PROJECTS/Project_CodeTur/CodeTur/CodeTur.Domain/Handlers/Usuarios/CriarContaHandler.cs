@@ -2,6 +2,7 @@
 using CodeTur.Domain.Repositories;
 using CodeTur.Shared.Commands;
 using CodeTur.Shared.Handlers.Contracts;
+using CodeTur.Shared.Utils;
 using Flunt.Notifications;
 using System;
 using System.Collections.Generic;
@@ -50,6 +51,9 @@ namespace CodeTur.Domain.Handlers.Usuarios
                 return new GenericCommandResult(false, "E-mail já cadastrado!", "Informe outro e-mail.");
             }
 
+            // criptografar a senha:
+            command.Senha = Senha.Criptografar(command.Senha);
+
             // salvar novo usuário no BD:
             Usuario novoUsuario = new Usuario(command.Nome, command.Email, command.Senha, command.TipoUsuario);
 
@@ -61,6 +65,7 @@ namespace CodeTur.Domain.Handlers.Usuarios
             _usuarioRepository.Adicionar(novoUsuario);
 
             // enviar e-mail de boas vindas
+            // não realizado ainda!
 
             return new GenericCommandResult(true, "Usuario criado!", "Token");
         }

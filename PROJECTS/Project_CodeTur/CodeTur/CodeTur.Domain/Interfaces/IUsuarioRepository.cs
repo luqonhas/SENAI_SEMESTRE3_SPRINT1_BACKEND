@@ -11,7 +11,6 @@ namespace CodeTur.Domain.Repositories
     {
         void Adicionar(Usuario usuario);
         void Alterar(Usuario usuario);
-        void AlterarSenha(Usuario usuario);
         Usuario BuscarPorEmail(string email);
         Usuario BuscarPorId(Guid id);
 

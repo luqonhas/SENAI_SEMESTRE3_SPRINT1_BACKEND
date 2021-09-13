@@ -39,5 +39,25 @@ namespace CodeTur.Domain.Entidades
         public string Descricao { get; private set; }
         public EnStatusPacote Status { get; private set; }
 
+        // Composições
+        public IReadOnlyCollection<Comentario> Comentarios { get { return _comentarios.ToArray(); } }
+
+        // Para alterar os comentários, vamos precisar de uma lista de apoio
+        private List<Comentario> _comentarios = new List<Comentario>();
+
+        // O usuário pode ter somente 1 comentário em cada pacote
+        public void AdicionarComentario(Comentario comentario)
+        {
+            // Se encontrar algum comentário com o mesmo id de usuário
+            if (_comentarios.Any(c => c.IdUsuario == comentario.IdUsuario))
+                AddNotification("Comentário", "Este usuário já possui um comentário!");
+
+            // Se for válid, adiciona o comentário
+            if (IsValid)
+            {
+                _comentarios.Add(comentario);
+            }
+
+        }
     }
 }

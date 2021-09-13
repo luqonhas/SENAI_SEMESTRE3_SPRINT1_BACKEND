@@ -1,4 +1,10 @@
+using CodeTur.Domain.Handlers.Autentication;
+using CodeTur.Domain.Handlers.Pacotes;
+using CodeTur.Domain.Handlers.Usuarios;
+using CodeTur.Domain.Interfaces;
+using CodeTur.Domain.Repositories;
 using CodeTur.Infra.Data.Contexts;
+using CodeTur.Infra.Data.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -74,6 +80,18 @@ namespace CodeTur.Api
                         ValidAudience = "codetur"
                     };
                 });
+
+            // injeções de dependência
+            #region Usuarios
+                services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+                services.AddTransient<CriarContaHandler, CriarContaHandler>();
+                services.AddTransient<LogarHandler, LogarHandler>();
+            #endregion
+
+            #region Pacotes
+                services.AddTransient<IPacoteRepository, PacoteRepository>();
+                services.AddTransient<CriarPacoteHandler, CriarPacoteHandler>();
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
