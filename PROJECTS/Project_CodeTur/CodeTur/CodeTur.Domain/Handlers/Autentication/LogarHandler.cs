@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace CodeTur.Domain.Handlers.Autentication
 {
     // método de logar
-    public class LogarHandler : Notifiable<Notification>, IHandler<LogarCommand>
+    public class LogarHandler : Notifiable<Notification>, IHandlerCommand<LogarCommand>
     {
         private readonly IUsuarioRepository _usuarioRepository;
 

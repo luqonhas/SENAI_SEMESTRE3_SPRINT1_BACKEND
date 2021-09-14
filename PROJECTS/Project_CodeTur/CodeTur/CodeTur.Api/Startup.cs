@@ -5,21 +5,15 @@ using CodeTur.Domain.Interfaces;
 using CodeTur.Domain.Repositories;
 using CodeTur.Infra.Data.Contexts;
 using CodeTur.Infra.Data.Repositories;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CodeTur.Api
 {
@@ -91,6 +85,7 @@ namespace CodeTur.Api
             #region Pacotes
                 services.AddTransient<IPacoteRepository, PacoteRepository>();
                 services.AddTransient<CriarPacoteHandler, CriarPacoteHandler>();
+                services.AddTransient<ListarPacotesHandler, ListarPacotesHandler>();
             #endregion
         }
 

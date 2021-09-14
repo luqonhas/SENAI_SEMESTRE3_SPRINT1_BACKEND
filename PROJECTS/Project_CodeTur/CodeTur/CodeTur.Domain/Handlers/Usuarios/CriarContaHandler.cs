@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace CodeTur.Domain.Handlers.Usuarios
 {
     // manipulador - método criar conta
-    public class CriarContaHandler : Notifiable<Notification>, IHandler<CriarContaCommand>
+    public class CriarContaHandler : Notifiable<Notification>, IHandlerCommand<CriarContaCommand>
     {
         // readonly para ninguém consiga overwrite
         // injeção de dependência 

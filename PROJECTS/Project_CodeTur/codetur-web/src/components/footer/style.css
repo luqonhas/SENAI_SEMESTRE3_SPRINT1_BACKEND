@@ -1,0 +1,17 @@
+footer {
+    width: 100%;
+    background-color: #F6511D;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+footer div,
+footer h3 {
+    padding: 20px;
+    margin: 20px;
+}
+
+footer h3 {
+    border-right: solid 1px white;
+}

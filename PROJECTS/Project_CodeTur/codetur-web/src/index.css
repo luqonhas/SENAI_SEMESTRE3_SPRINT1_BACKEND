@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.form {
+  margin: 40px;
+  padding: 20px;
+  border: solid 1px #CCC;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  justify-content: center;
+}
+
+h1, 
+h2, 
+h3,
+label,
+.logo {
+  font-weight: bold !important;
+}
+
+form label {
+  margin: 15px 0;
+}
+
+form h2,
+form button {
+  /* alinha eles mesmos no centro */
+  align-self: center;
+}
+
+form a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Mudamos a cor do botão primary */
+.btn-primary {
+  background-color: #8458FF !important;
+  border: solid 1px #8458FF !important;
+}
+
+.btn-primary:hover {
+  background-color: #FFF !important;
+  color:#8458FF !important;
+}

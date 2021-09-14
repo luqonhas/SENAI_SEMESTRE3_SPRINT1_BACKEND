@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace CodeTur.Domain.Handlers.Pacotes
 {
     // handler de criar pacote
-    public class CriarPacoteHandler : Notifiable<Notification>, IHandler<CriarPacoteCommand>
+    public class CriarPacoteHandler : Notifiable<Notification>, IHandlerCommand<CriarPacoteCommand>
     {
         private readonly IPacoteRepository _pacoteRepository;
 
@@ -50,7 +50,7 @@ namespace CodeTur.Domain.Handlers.Pacotes
             _pacoteRepository.Cadastrar(pacote);
 
             // adicionar retornar sucesso
-            return new GenericCommandResult(true, "Pacote cadastrado com sucesso!", null);
+            return new GenericCommandResult(true, "Pacote cadastrado com sucesso!", pacote);
         }
 
     }

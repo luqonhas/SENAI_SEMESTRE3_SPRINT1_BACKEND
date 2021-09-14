@@ -12,7 +12,7 @@ namespace CodeTur.Shared.Handlers.Contracts
     // o <T> define que é genérico
     // <T> where T : ICommand - quer que o tipo genérico <T> herde de ICommand, obrigando que essa interface manipuladora genérica tenha uma herança da interface ICommand
     
-    public interface IHandler<T> where T : ICommand
+    public interface IHandlerCommand<T> where T : ICommand
     {
         // esse método faz com que retorne um valor genérico, então com isso, será possível retornar qualquer coisa nesse método
         // ler mensagens do zap do paulo e do vitor do dia 12/09/21 às 15:10
